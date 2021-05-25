@@ -10,7 +10,7 @@ use MoySkladSDK\RequestPreparer;
 
 /**
  * Trait GetMetadata
- * Метаданные модели сущности
+ * Получение метаданных модели сущности
  * @package MoySkladSDK\Actions
  * @author gringa <gringa@gringa.me>
  * @licence MIT
@@ -20,10 +20,9 @@ use MoySkladSDK\RequestPreparer;
 trait GetMetadata
 {
     /**
-     * Метаданные модели сущности
+     * Получение метаданных модели сущности
      * @return Metadata|mixed
-     * @throws \MoySkladSDK\Exception\ApiClientException
-     * @throws \ReflectionException|Exception
+     * @throws \MoySkladSDK\Exception\ApiClientException|\ReflectionException|Exception
      */
     public function getMetadata()
     {

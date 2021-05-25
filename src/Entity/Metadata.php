@@ -13,4 +13,14 @@ use MoySkladSDK\Annotation\ArrayClass;
  */
 class Metadata extends MetaEntity
 {
+    /**
+     * Создавать новые Сущности с меткой "Общий"
+     * @var bool
+     */
+    public bool $createShared;
+    /**
+     * Список статусов сущности
+     * @ArrayClass(type="MoySkladSDK\Entity\State")
+     */
+    public array $states;
 }

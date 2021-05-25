@@ -13,7 +13,11 @@ use MoySkladSDK\Annotation\ArrayClass;
  */
 class ListEntity extends MetaEntity
 {
-    //public Context $context; - этого пока нету
+    /**
+     * Метаданные о сотруднике, выполнившем запрос.
+     * @var Context
+     */
+    public Context $context;
     /**
      * Массив сущностей
      * @ArrayClass(type="MoySkladSDK\Entity\MetaEntity")

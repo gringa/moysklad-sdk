@@ -16,7 +16,10 @@ class Meta
     /**
      * Соотношение внутренних типов в к классам сущностей
      */
-    private const TYPES = [];
+    private const TYPES = [
+        'counterparty' => Counterparty::class
+    ];
+
     /**
      * Ссылка на скачивание Изображения.
      * @Readonly

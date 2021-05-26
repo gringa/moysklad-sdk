@@ -23,4 +23,13 @@ class EntityClient
     {
         $this->api = $api;
     }
+
+    /**
+     * Клиент для контрагентов
+     * @return CounterpartyClient
+     */
+    public function counterparty(): CounterpartyClient
+    {
+        return new CounterpartyClient($this->api);
+    }
 }

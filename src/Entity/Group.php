@@ -22,6 +22,6 @@ class Group extends MetaEntity
      */
     public string $name;
 
-    private static string $_path = '/entity/group/';
-    private static string $_type = 'group';
+    protected static string $_path = '/entity/group/';
+    protected static string $_type = 'group';
 }

@@ -142,6 +142,6 @@ class Employee extends MetaEntity
      */
     public \DateTime $updated;
 
-    private static string $_path = '/entity/employee/';
-    private static string $_type = 'employee';
+    protected static string $_path = '/entity/employee/';
+    protected static string $_type = 'employee';
 }

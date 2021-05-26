@@ -27,14 +27,15 @@ class MetaEntity
      * @var string
      */
     public string $id;
+
+    protected static string $_path = '';
+    protected static string $_type = '';
+
     /**
      * Метаданные сущности
      * @var Meta
      */
     protected Meta $meta;
-
-    private static string $_path = '';
-    private static string $_type = '';
 
     /**
      * MetaEntity constructor.

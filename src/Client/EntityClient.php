@@ -25,6 +25,15 @@ class EntityClient
     }
 
     /**
+     * Клиент для ассортимента
+     * @return AssortmentClient
+     */
+    public function assortment(): AssortmentClient
+    {
+        return new AssortmentClient($this->api);
+    }
+
+    /**
      * Клиент для контрагентов
      * @return CounterpartyClient
      */

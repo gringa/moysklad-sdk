@@ -15,6 +15,8 @@ use MoySkladSDK\Annotation\Readonly;
  */
 class Product extends MetaEntity
 {
+    use StockTrait;
+
     public const PRODUCT_PAYMENT_ITEM_TYPES = [
         'GOOD' => 'Товар',
         'EXCISABLE_GOOD' => 'Подакцизный товар',

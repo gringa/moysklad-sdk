@@ -33,6 +33,10 @@ class EntityClient
         return new CounterpartyClient($this->api);
     }
 
+    /**
+     * Клиент для товаров
+     * @return ProductClient
+     */
     public function product(): ProductClient
     {
         return new ProductClient($this->api);

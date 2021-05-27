@@ -15,6 +15,8 @@ use MoySkladSDK\Entity\Counterparty;
  * Class CounterpartyClient
  * Клиент для сущности Контрагентов
  * @package MoySkladSDK\Client
+ * @author gringa <gringa@gringa.me>
+ * @licence MIT
  */
 class CounterpartyClient extends EntityClientBase
 {

@@ -11,6 +11,13 @@ use MoySkladSDK\Actions\GetMetadata;
 use MoySkladSDK\Actions\UpdateEntity;
 use MoySkladSDK\Entity\Product;
 
+/**
+ * Class ProductClient
+ * Клиент для сущности Контрагентов
+ * @package MoySkladSDK\Client
+ * @author gringa <gringa@gringa.me>
+ * @licence MIT
+ */
 class ProductClient extends EntityClientBase
 {
     use CreateEntity;

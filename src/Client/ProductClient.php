@@ -13,7 +13,7 @@ use MoySkladSDK\Entity\Product;
 
 /**
  * Class ProductClient
- * Клиент для сущности Контрагентов
+ * Клиент для сущности Товаров
  * @package MoySkladSDK\Client
  * @author gringa <gringa@gringa.me>
  * @licence MIT

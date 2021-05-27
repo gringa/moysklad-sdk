@@ -17,7 +17,8 @@ class Meta
      * Соотношение внутренних типов в к классам сущностей
      */
     private const TYPES = [
-        'counterparty' => Counterparty::class
+        'counterparty' => Counterparty::class,
+        'product' => Product::class
     ];
 
     /**

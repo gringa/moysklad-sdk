@@ -32,4 +32,9 @@ class EntityClient
     {
         return new CounterpartyClient($this->api);
     }
+
+    public function product(): ProductClient
+    {
+        return new ProductClient($this->api);
+    }
 }

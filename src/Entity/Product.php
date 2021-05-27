@@ -59,7 +59,7 @@ class Product extends MetaEntity
     public array $attributes;
     /**
      * Штрихкоды Комплекта
-     * @ArrayClass(type="MoyskladSKD\Entity\Barcode")
+     * @ArrayClass(type="MoySkladSDK\Entity\Barcode")
      * @var array
      */
     public array $barcodes;

@@ -17,7 +17,7 @@ class Pack
 {
     /**
      * Массив штрихкодов упаковок товаров
-     * @ArrayClass(Moysklad\Entity\Barcode)
+     * @ArrayClass(MoyskladSDK\Entity\Barcode)
      * @var array
      */
     public array $barcodes;

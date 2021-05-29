@@ -3,6 +3,7 @@
 namespace MoySkladSDK;
 
 use MoySkladSDK\Client\EntityClient;
+use MoySkladSDK\Param\QueryParam;
 
 /**
  * Class RequestPreparer
@@ -18,7 +19,7 @@ class RequestPreparer
         'Content-Type' => 'application/json',
         'Accept' => 'application/json;charset=utf-8',
     ];
-    private array $params = [];
+    private QueryParam $params;
     private string $path;
     private array $query = [];
 
@@ -48,10 +49,14 @@ class RequestPreparer
      */
     public function buildFullUrl(): string
     {
-        if (count($this->params) < 1) {
+        $params = [];
+        if (isset($this->params)) {
+            $params = $this->params->getData();
+        }
+        if (count($params) < 1) {
             return $this->path;
         }
-        return $this->path.'?'.http_build_query($this->query);
+        return $this->path.'?'.http_build_query($params);
     }
 
     /**
@@ -74,11 +79,10 @@ class RequestPreparer
 
     /**
      * Установка параметров
-     * @param array $params
+     * @param QueryParam $params
      * @return $this
-     * @todo Пока не используется
      */
-    public function params(array $params): self
+    public function params(QueryParam $params): self
     {
         $this->params = $params;
         return $this;

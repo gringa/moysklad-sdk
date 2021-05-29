@@ -5,6 +5,7 @@ namespace MoySkladSDK\Actions;
 use Exception;
 use MoySkladSDK\ApiClient;
 use MoySkladSDK\Client\EntityClientBase;
+use MoySkladSDK\Param\QueryParam;
 use MoySkladSDK\RequestPreparer;
 
 /**
@@ -23,11 +24,14 @@ trait DeleteEntity
      * @param string $id ID сущности
      * @throws Exception
      */
-    public function delete(string $id): void
+    public function delete(string $id, QueryParam $params): void
     {
         if (get_parent_class($this) !== EntityClientBase::class) {
             throw new Exception('The trait cannot be used outside the EntityClientBase class');
         }
-        $this->api->delete(RequestPreparer::path($this->getPath().$id));
+        if (is_null($params)) {
+            $params=new QueryParam();
+        }
+        $this->api->delete(RequestPreparer::path($this->getPath().$id)->params($params));
     }
 }

@@ -117,6 +117,7 @@ class Serializer
      * Сворчивание объекта в массив
      * @param $object
      * @return array|mixed
+     * @throws \ReflectionException
      */
     public static function serialize($object)
     {
@@ -133,6 +134,7 @@ class Serializer
      * Обход массива для приведения всех его элементов к однородному виду
      * @param array $data
      * @return array
+     * @throws \ReflectionException
      */
     private static function parseArray(array $data): array
     {

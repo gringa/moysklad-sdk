@@ -15,17 +15,17 @@ use MoySkladSDK\Annotation\Readonly;
 trait StockTrait
 {
     /**
-     * Остаток на складе
-     * @Readonly
-     * @var float
-     */
-    public float $stock;
-    /**
      * Ожидается
      * @Readonly
      * @var float
      */
     public float $inTransit;
+    /**
+     * Доступно
+     * @Readonly
+     * @var float
+     */
+    public float $quantity;
     /**
      * В резерве
      * @Readonly
@@ -33,9 +33,9 @@ trait StockTrait
      */
     public float $reserve;
     /**
-     * Доступно
+     * Остаток на складе
      * @Readonly
      * @var float
      */
-    public float $quantity;
+    public float $stock;
 }

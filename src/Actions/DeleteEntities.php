@@ -6,6 +6,7 @@ use Exception;
 use MoySkladSDK\ApiClient;
 use MoySkladSDK\Client\EntityClientBase;
 use MoySkladSDK\Entity\MetaEntity;
+use MoySkladSDK\Param\QueryParam;
 use MoySkladSDK\RequestPreparer;
 
 /**
@@ -25,7 +26,7 @@ trait DeleteEntities
      * @return array
      * @throws \MoySkladSDK\Exception\ApiClientException|\ReflectionException|Exception
      */
-    public function massDelete(array $entities): array
+    public function massDelete(array $entities, QueryParam $param=null): array
     {
         if (get_parent_class($this) !== EntityClientBase::class) {
             throw new Exception('The trait cannot be used outside the EntityClientBase class');

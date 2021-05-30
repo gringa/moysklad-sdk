@@ -6,6 +6,7 @@ use Doctrine\Common\Annotations\AnnotationReader;
 use MoySkladSDK\Annotation\ArrayClass;
 use MoySkladSDK\Annotation\MoveIfArray;
 use MoySkladSDK\Annotation\Readonly;
+use MoySkladSDK\Entity\AttachedEntityTrait;
 use MoySkladSDK\Entity\Meta;
 use MoySkladSDK\Entity\MetaEntity;
 
@@ -119,6 +120,8 @@ class Serializer
             case 'string':
             default:
                 return (string) $data;
+            default:
+                return $data;
         }
     }
 
@@ -227,6 +230,18 @@ class Serializer
                     }
                     if ($private) {
                         $property->setAccessible(false);
+                    }
+                }
+            }
+            if (in_array(AttachedEntityTrait::class, class_uses($object), true)) {
+                $values = $object->getAttached();
+                foreach ($values as $key => $value) {
+                    if (is_array($value)) {
+                        $ret[$key] = self::parseArray($value);
+                    } elseif (is_object($value)) {
+                        $ret[$key] = self::parseObject($value);
+                    } else {
+                        $ret[$key] = $value;
                     }
                 }
             }

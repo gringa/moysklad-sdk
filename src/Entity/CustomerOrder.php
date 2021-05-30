@@ -15,6 +15,8 @@ use MoySkladSDK\Annotation\Readonly;
  */
 class CustomerOrder extends MetaEntity
 {
+    use AttachedEntityTrait;
+
     /**
      * Метаданные контрагента
      * @var Counterparty
@@ -64,6 +66,7 @@ class CustomerOrder extends MetaEntity
     public \DateTime $deliveryPlannedMoment;
     /**
      * Массив ссылок на связанные отгрузки
+     * @Readonly
      * @var ListEntity
      */
     public ListEntity $demands;
@@ -136,6 +139,7 @@ class CustomerOrder extends MetaEntity
     public array $payments;
     /**
      * Метаданные позиций Заказа покупателя
+     * @Readonly
      * @var ListEntity
      */
     public ListEntity $positions;
@@ -232,7 +236,23 @@ class CustomerOrder extends MetaEntity
      */
     public float $vatSum;
 
-
     protected static string $_path = '/entity/customerorder/';
     protected static string $_type = 'customerorder';
+
+    /**
+     * Задать позиции заказа для добавления
+     * @param array|CustomEntity[] $items
+     * @return self
+     */
+    public function setPositions(array $items): self
+    {
+        $value = [];
+        foreach ($items as $item) {
+            if (get_class($item) === CustomerOrderPosition::class) {
+                $value[] = $item;
+            }
+        }
+        $this->addAttached('positions', $value);
+        return $this;
+    }
 }

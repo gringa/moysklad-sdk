@@ -68,4 +68,13 @@ class EntityClient
     {
         return new ProductClient($this->api);
     }
+
+    /**
+     * Клиент для услуг
+     * @return ServiceClient
+     */
+    public function service(): ServiceClient
+    {
+        return new ServiceClient($this->api);
+    }
 }

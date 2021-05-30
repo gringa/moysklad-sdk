@@ -71,7 +71,26 @@ class Serializer
     {
         if (is_array($data)) {
             if ('array' === $type || '' === $type) {
-                return $data;
+                $ret = [];
+                foreach ($data as $key => $item) {
+                    if(is_array($item)) {
+                        $classType = $item['meta']['type'] ?? null;
+                        if(is_null($classType)) {
+                            $ret[$key] = $item;
+                        } else {
+                            $type = Meta::getClassNameByType($classType);
+                            if (is_null($type)) {
+                                $ret[$key] = $item;
+                            } else {
+
+                                $ret[$key] = self::parse($item, $type);
+                            }
+                        }
+                    } else {
+                        $ret[$key] = $item;
+                    }
+                }
+                return $ret;
             }
             if (class_exists($type)) {
                 if (MetaEntity::class === $type) {

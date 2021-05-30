@@ -1,8 +1,6 @@
 <?php
 
-
 namespace MoySkladSDK\Entity;
-
 
 use MoySkladSDK\Annotation\ArrayClass;
 use MoySkladSDK\Annotation\Readonly;

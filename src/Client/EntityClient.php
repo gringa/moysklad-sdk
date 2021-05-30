@@ -43,6 +43,15 @@ class EntityClient
     }
 
     /**
+     * Клиент для валюты
+     * @return CurrencyClient
+     */
+    public function currency(): CurrencyClient
+    {
+        return new CurrencyClient($this->api);
+    }
+
+    /**
      * Клиент для заказов покупателя
      * @return CustomerOrderClient
      */

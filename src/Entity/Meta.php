@@ -18,6 +18,7 @@ class Meta
      */
     private const TYPES = [
         'counterparty' => Counterparty::class,
+        'image' => Image::class,
         'product' => Product::class
     ];
 
@@ -47,6 +48,7 @@ class Meta
      * @var string
      */
     public string $metadataHref;
+    public string $nextHref;
     /**
      * Отступ в выданном списке
      * @Readonly

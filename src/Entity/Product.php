@@ -55,8 +55,8 @@ class Product extends MetaEntity
     public string $article;
     /**
      * Коллекция доп. полей
-     * @var array
-     * @todo реализовать
+     * @ArrayClass(type="MoySkladSDK\Entity\Attribute")
+     * @var array|Attribute[]
      */
     public array $attributes;
     /**

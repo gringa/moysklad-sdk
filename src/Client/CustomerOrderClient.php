@@ -2,8 +2,11 @@
 
 namespace MoySkladSDK\Client;
 
+use MoySkladSDK\Actions\CreateEntity;
 use MoySkladSDK\Actions\GetEntity;
 use MoySkladSDK\Actions\GetEntityList;
+use MoySkladSDK\Actions\GetMetadata;
+use MoySkladSDK\Actions\UpdateEntity;
 use MoySkladSDK\Entity\CustomerOrder;
 
 /**
@@ -15,8 +18,11 @@ use MoySkladSDK\Entity\CustomerOrder;
  */
 class CustomerOrderClient extends EntityClientBase
 {
+    use CreateEntity;
     use GetEntity;
     use GetEntityList;
+    use GetMetadata;
+    use UpdateEntity;
 
     protected function getClass(): string
     {

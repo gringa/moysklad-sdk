@@ -17,10 +17,14 @@ class Meta
      * Соотношение внутренних типов в к классам сущностей
      */
     private const TYPES = [
+        'account' => Account::class,
+        'contactperson' => ContactPerson::class,
         'counterparty' => Counterparty::class,
         'customerorder' => CustomerOrder::class,
         'customerorderposition' => CustomerOrderPosition::class,
+        'file' => File::class,
         'image' => Image::class,
+        'note' => Note::class,
         'product' => Product::class
     ];
 

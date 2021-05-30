@@ -15,8 +15,8 @@ use MoySkladSDK\Entity\Assortment;
  */
 class AssortmentClient extends EntityClientBase
 {
-    use GetEntityList;
     use DeleteEntities;
+    use GetEntityList;
 
     protected function getClass(): string
     {

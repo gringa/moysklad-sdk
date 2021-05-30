@@ -18,6 +18,8 @@ class Meta
      */
     private const TYPES = [
         'counterparty' => Counterparty::class,
+        'customerorder' => CustomerOrder::class,
+        'customerorderposition' => CustomerOrderPosition::class,
         'image' => Image::class,
         'product' => Product::class
     ];

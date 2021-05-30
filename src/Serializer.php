@@ -118,7 +118,6 @@ class Serializer
             case 'bool':
                 return (bool) $data;
             case 'string':
-            default:
                 return (string) $data;
             default:
                 return $data;

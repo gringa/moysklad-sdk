@@ -73,16 +73,15 @@ class Serializer
             if ('array' === $type || '' === $type) {
                 $ret = [];
                 foreach ($data as $key => $item) {
-                    if(is_array($item)) {
+                    if (is_array($item)) {
                         $classType = $item['meta']['type'] ?? null;
-                        if(is_null($classType)) {
+                        if (is_null($classType)) {
                             $ret[$key] = $item;
                         } else {
                             $type = Meta::getClassNameByType($classType);
                             if (is_null($type)) {
                                 $ret[$key] = $item;
                             } else {
-
                                 $ret[$key] = self::parse($item, $type);
                             }
                         }
@@ -123,6 +122,8 @@ class Serializer
                                 $property->setAccessible(false);
                             }
                         }
+                    } else {
+                        //dd($key, $item);
                     }
                 }
                 return $class;

@@ -70,6 +70,15 @@ class EntityClient
     }
 
     /**
+     * Клиент для Типов цен
+     * @return PriceTypeClient
+     */
+    public function priceType(): PriceTypeClient
+    {
+        return new PriceTypeClient($this->api);
+    }
+
+    /**
      * Клиент для товаров
      * @return ProductClient
      */

@@ -20,11 +20,13 @@ class Meta
         'account' => Account::class,
         'contactperson' => ContactPerson::class,
         'counterparty' => Counterparty::class,
+        'currency' => Currency::class,
         'customerorder' => CustomerOrder::class,
         'customerorderposition' => CustomerOrderPosition::class,
         'file' => File::class,
         'image' => Image::class,
         'note' => Note::class,
+        'pricetype' => PriceType::class,
         'product' => Product::class
     ];
 

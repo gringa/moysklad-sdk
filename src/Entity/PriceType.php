@@ -23,6 +23,6 @@ class PriceType extends MetaEntity
      */
     public string $name;
 
-    protected static string $_path = '/entity/pricetype/';
+    protected static string $_path = '/context/companysettings/pricetype/';
     protected static string $_type = 'pricetype';
 }

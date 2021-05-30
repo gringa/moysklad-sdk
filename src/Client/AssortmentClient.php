@@ -7,7 +7,7 @@ use MoySkladSDK\Actions\GetEntityList;
 use MoySkladSDK\Entity\Assortment;
 
 /**
- * Class CounterpartyClient
+ * Class AssortmentClient
  * Клиент для сущности Ассортимента
  * @package MoySkladSDK\Client
  * @author gringa <gringa@gringa.me>

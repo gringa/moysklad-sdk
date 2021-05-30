@@ -4,6 +4,7 @@ namespace MoySkladSDK;
 
 use Doctrine\Common\Annotations\AnnotationReader;
 use MoySkladSDK\Annotation\ArrayClass;
+use MoySkladSDK\Annotation\MoveIfArray;
 use MoySkladSDK\Annotation\Readonly;
 use MoySkladSDK\Entity\Meta;
 use MoySkladSDK\Entity\MetaEntity;
@@ -85,6 +86,14 @@ class Serializer
                     if ($ref->hasProperty($key)) {
                         $property = $ref->getProperty($key);
                         if (!$property->isStatic()) {
+                            $reader = new AnnotationReader();
+                            $MoveIfArray = $reader->getPropertyAnnotation($property, MoveIfArray::class);
+                            if ($MoveIfArray && is_array($item)) {
+                                $newKey = $MoveIfArray->property;
+                                if ($ref->hasProperty($newKey)) {
+                                    $property = $ref->getProperty($newKey);
+                                }
+                            }
                             $private = $property->isPrivate() || $property->isProtected();
                             if ($private) {
                                 $property->setAccessible(true);
@@ -160,7 +169,8 @@ class Serializer
      */
     private static function parseItem($value, \ReflectionProperty $property)
     {
-        $propertyType = $property->getType()->getName();
+        $propertyType = $property->getType();
+        $propertyType = is_null($propertyType) ? '' : $propertyType->getName();
         if (('array' === $propertyType || '' === $propertyType) && is_array($value)) {
             $reader = new AnnotationReader();
             $arrayClass = $reader->getPropertyAnnotation($property, ArrayClass::class);

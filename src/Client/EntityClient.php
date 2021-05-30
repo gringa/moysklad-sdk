@@ -52,6 +52,15 @@ class EntityClient
     }
 
     /**
+     * Клиент для юр.лиц
+     * @return OrganizationClient
+     */
+    public function organization(): OrganizationClient
+    {
+        return new OrganizationClient($this->api);
+    }
+
+    /**
      * Клиент для товаров
      * @return ProductClient
      */

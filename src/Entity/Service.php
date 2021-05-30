@@ -15,7 +15,7 @@ use MoySkladSDK\Annotation\Readonly;
  * @licence MIT
  * @link https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-usluga
  */
-class Service
+class Service extends MetaEntity
 {
     /**
      * Добавлен ли товар в архив
@@ -146,4 +146,7 @@ class Service
      * @var int
      */
     public int $vat;
+
+    protected static string $_path = '/entity/service/';
+    protected static string $_type = 'service';
 }

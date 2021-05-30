@@ -43,6 +43,15 @@ class EntityClient
     }
 
     /**
+     * Клиент для заказов покупателя
+     * @return CustomerOrderClient
+     */
+    public function customerOrder(): CustomerOrderClient
+    {
+        return new CustomerOrderClient($this->api);
+    }
+
+    /**
      * Клиент для товаров
      * @return ProductClient
      */

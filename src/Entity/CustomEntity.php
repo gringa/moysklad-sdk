@@ -15,29 +15,29 @@ use MoySkladSDK\Annotation\Readonly;
 class CustomEntity extends MetaEntity
 {
     /**
-     * Время последнего обновления элемента
-     * @Readonly
-     * @var \DateTime
-     */
-    public \DateTime $updated;
-    /**
-     * Наименование
+     * Код
      * @var string
      */
-    public string $name;
+    public string $code;
     /**
      * Описание
      * @var string
      */
     public string $description;
     /**
-     * Код
-     * @var string
-     */
-    public string $code;
-    /**
      * Внешний код
      * @var string
      */
     public string $externalCode;
+    /**
+     * Наименование
+     * @var string
+     */
+    public string $name;
+    /**
+     * Время последнего обновления элемента
+     * @Readonly
+     * @var \DateTime
+     */
+    public \DateTime $updated;
 }

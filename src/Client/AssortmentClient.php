@@ -2,6 +2,7 @@
 
 namespace MoySkladSDK\Client;
 
+use MoySkladSDK\Actions\DeleteEntities;
 use MoySkladSDK\Actions\GetEntityList;
 use MoySkladSDK\Entity\Assortment;
 
@@ -15,6 +16,7 @@ use MoySkladSDK\Entity\Assortment;
 class AssortmentClient extends EntityClientBase
 {
     use GetEntityList;
+    use DeleteEntities;
 
     protected function getClass(): string
     {

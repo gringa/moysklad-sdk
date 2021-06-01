@@ -50,6 +50,18 @@ class MetaEntity
     }
 
     /**
+     * Возвращает href из метаданных сущности (или null)
+     * @return string|null
+     */
+    public function getMetaHref(): ?string
+    {
+        if (isset($this->meta)) {
+            return $this->meta->href ?? null;
+        }
+        return null;
+    }
+
+    /**
      * Получить путь сущности
      * @return string
      */
